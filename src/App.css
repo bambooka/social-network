@@ -48,21 +48,6 @@
   margin: 0 auto;
 }
 
-header {
-  grid-area: header;
-  background-color: #61dafb;
-}
 
-header img {
-  width: 20px;
-}
 
-nav {
-  grid-area: nav;
-  background-color: greenyellow;
-}
 
-main {
-  grid-area: main;
-  background-color: brown;
-}

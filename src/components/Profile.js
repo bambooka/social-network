@@ -1,8 +1,9 @@
 import React from "react";
+import style from './../styles/Profile.module.css'
 
-const Main = () => {
+const Profile = () => {
   return (
-    <main>
+    <main className={style.profile}>
       <img src="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png" />
       <div>
         <img src="https://interactive-examples.mdn.mozilla.net/media/examples/grapefruit-slice-332-332.jpg"/>
@@ -18,4 +19,4 @@ const Main = () => {
   )
 }
 
-export default Main;
+export default Profile;
