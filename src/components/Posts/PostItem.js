@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './../../styles/PostItem.module.css'
 
-const PostItem = () => {
+const PostItem = (props) => {
   return (
     <>
-      <img className={style.logo} src='https://interactive-examples.mdn.mozilla.net/media/examples/grapefruit-slice-332-332.jpg' alt='avatar' />
-      <p>post text</p>
+      <img className={style.logo} src={props.img} alt='avatar' />
+      <p>{props.text}</p>
       </>
   )
 
