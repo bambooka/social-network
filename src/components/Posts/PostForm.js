@@ -5,6 +5,7 @@ const PostForm = () => {
   return (
     <div className={style.form}>
       <textarea />
+      <br />
       <button>Add post</button>
     </div>
   )
