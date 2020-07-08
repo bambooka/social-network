@@ -12,7 +12,7 @@ function App(props) {
             <div className="App">
                 <div className="app-wrapper">
                     <Header/>
-                    <Navigation/>
+                    <Navigation friends={props.friends}/>
                     <Switch>
                         <Route path='/dialogs'>
                             <Dialogs messages={props.messages} dialogs={props.dialogs}/>

@@ -1,0 +1,14 @@
+.friendList {
+    display: grid;
+}
+
+.friendList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.friendItem img {
+    width: 80px;
+    border-radius: 50%;
+}

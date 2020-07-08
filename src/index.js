@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import data from './data/state'
 ReactDOM.render(
   <React.StrictMode>
-    <App messages={data.messages} dialogs={data.dialogs} posts={data.posts}/>
+    <App messages={data.messages} dialogs={data.dialogs} posts={data.posts} friends={data.friends}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
