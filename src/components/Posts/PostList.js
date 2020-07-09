@@ -5,8 +5,8 @@ import style from './../../styles/PostList.module.css'
 const PostList = (props) => {
   return (
     <div className={style.list}>
-      {props.posts.map(post => {
-        return <PostItem img={post.img} text={post.text}/>
+      {props.posts.map((post, index) => {
+        return <PostItem key={index} img={post.img} text={post.text}/>
       })}
     </div>
   )

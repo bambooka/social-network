@@ -18,7 +18,7 @@ function App(props) {
                             <Dialogs messages={props.messages} dialogs={props.dialogs}/>
                         </Route>
                         <Route path='/profile'>
-                            <Profile posts={props.posts}/>
+                            <Profile posts={props.posts} addPost={props.addPost}/>
                         </Route>
                     </Switch>
                 </div>

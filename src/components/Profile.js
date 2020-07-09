@@ -9,7 +9,7 @@ const Profile = (props) => {
     <main className={style.profile}>
       <img src="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png" alt='profile wrapper'/>
       <ProfileInfo />
-      <PostForm />
+      <PostForm addPost={props.addPost} />
       <PostList posts={props.posts} />
     </main>
   )

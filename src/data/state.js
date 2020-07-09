@@ -1,3 +1,7 @@
+import App from "../App";
+import React from 'react';
+import ReactDOM from 'react-dom'
+
 let data = {
   dialogs: [
     {id: 1, author: 'Eva'},
@@ -49,5 +53,14 @@ let data = {
 
 };
 
+export let addPost = (textMessage) => {
+  let newPost = {
+    id: 5,
+    img: 'https://www.featurepics.com/StockImage/20160705/lady-thinking-stock-illustration-4144233.jpg',
+    text: textMessage
+  };
+  data.posts.push(newPost);
+  console.log(data)
+};
 
 export default data;
