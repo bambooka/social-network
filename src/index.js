@@ -1,22 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 import data from './data/state'
-import {addPost} from './data/state'
-ReactDOM.render(
-  <React.StrictMode>
-    <App messages={data.messages}
-         dialogs={data.dialogs}
-         posts={data.posts}
-         friends={data.friends}
-         addPost={addPost}/>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import {renderEntireTree} from "./render";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+renderEntireTree(data);

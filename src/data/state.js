@@ -1,6 +1,5 @@
-import App from "../App";
 import React from 'react';
-import ReactDOM from 'react-dom'
+import {renderEntireTree} from "../render";
 
 let data = {
   dialogs: [
@@ -60,7 +59,7 @@ export let addPost = (textMessage) => {
     text: textMessage
   };
   data.posts.push(newPost);
-  console.log(data)
+  renderEntireTree(data);
 };
 
 export default data;
