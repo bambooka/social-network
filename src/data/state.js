@@ -48,7 +48,10 @@ let data = {
       name: 'Eva'
     },
 
-  ]
+  ],
+  currentPost: {
+    text: ''
+  }
 
 };
 
@@ -59,7 +62,14 @@ export let addPost = (textMessage) => {
     text: textMessage
   };
   data.posts.push(newPost);
+  console.log(data.currentPost.text , 'from addpost')
+  inputMessage('')
   renderEntireTree(data);
 };
+
+export let inputMessage = (inputText) => {
+  data.currentPost.text = inputText;
+  console.log(data.currentPost.text, 'from inputmessage')
+}
 
 export default data;

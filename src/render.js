@@ -2,6 +2,7 @@ import ReactDOM from "react-dom";
 import React from "react";
 import App from "./App";
 import {addPost} from "./data/state";
+import {inputMessage} from "./data/state";
 
 export let renderEntireTree = (data) => {
   ReactDOM.render(
@@ -10,7 +11,10 @@ export let renderEntireTree = (data) => {
            dialogs={data.dialogs}
            posts={data.posts}
            friends={data.friends}
-           addPost={addPost}/>
+           addPost={addPost}
+           inputMessage={inputMessage}
+           currentInput={data.currentPost}
+      />
     </React.StrictMode>,
     document.getElementById('root')
   );
