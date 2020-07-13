@@ -12,13 +12,13 @@ function App(props) {
             <div className="App">
                 <div className="app-wrapper">
                     <Header/>
-                    <Navigation friends={props.friends}/>
+                    <Navigation friends={props.store._data.friends}/>
                     <Switch>
                         <Route path='/dialogs'>
-                            <Dialogs messages={props.messages} dialogs={props.dialogs}/>
+                            <Dialogs messages={props.store._data.messages} dialogs={props.store._data.dialogs}/>
                         </Route>
                         <Route path='/profile'>
-                            <Profile posts={props.posts} addPost={props.addPost} inputMessage={props.inputMessage} currentInput={props.currentInput}/>
+                            <Profile posts={props.store._data.posts} addPost={props.addPost} inputMessage={props.inputMessage} currentInput={props.store._data.currentInput}/>
                         </Route>
                     </Switch>
                 </div>

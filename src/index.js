@@ -1,25 +1,22 @@
-import data, {addPost, inputMessage} from './data/state'
+import store from './data/state'
 import ReactDOM from "react-dom";
 import React from "react";
 import App from "./App";
-import {subscribe} from "./data/state";
 
-export let renderEntireTree = (data) => {
+export let renderEntireTree = (store) => {
+
   ReactDOM.render(
     <React.StrictMode>
-      <App messages={data.messages}
-           dialogs={data.dialogs}
-           posts={data.posts}
-           friends={data.friends}
-           addPost={addPost}
-           inputMessage={inputMessage}
-           currentInput={data.currentPost}
+      <App
+        store={store}
+        addPost={store.addPost.bind(store)}
+        inputMessage={store.inputMessage.bind(store)}
       />
     </React.StrictMode>,
     document.getElementById('root')
   );
 }
 
-renderEntireTree(data);
+renderEntireTree(store.getData());
 
-subscribe(renderEntireTree)
+store.subscribe(renderEntireTree);
