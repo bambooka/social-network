@@ -1,5 +1,8 @@
 import React from 'react';
-import {renderEntireTree} from "../render";
+
+let renderEntireTree = () => {
+  console.log('aaa')
+}
 
 let data = {
   dialogs: [
@@ -70,6 +73,10 @@ export let addPost = (textMessage) => {
 export let inputMessage = (inputText) => {
   data.currentPost.text = inputText;
   console.log(data.currentPost.text, 'from inputmessage')
+}
+
+export let subscribe = (observer) =>{
+  renderEntireTree = observer;
 }
 
 export default data;
