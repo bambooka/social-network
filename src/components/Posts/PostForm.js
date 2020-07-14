@@ -1,18 +1,21 @@
 import React from "react";
 import style from './../../styles/PostForm.module.css'
+import {addPostActionCreator, inputMessageActionCreator} from "../../data/state";
 
 const PostForm = (props) => {
   let refer = React.createRef();
 
   let addPost = () => {
     let inputValue = refer.current.value;
-    props.dispatch({type: 'ADD_POST', inputValue: inputValue})
+    let action = addPostActionCreator(inputValue);
+    props.dispatch(action)
     refer.current.value = '';
   }
 
   let inputMessage = () => {
     let inputValue = refer.current.value;
-    props.dispatch({type: 'INPUT_MESSAGE', inputValue: inputValue})
+    let action = inputMessageActionCreator(inputValue);
+    props.dispatch(action)
   }
 
   return (
