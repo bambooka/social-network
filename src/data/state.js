@@ -5,7 +5,7 @@ import {
 } from "../utils/constants";
 
 export const addPostActionCreator = (text) => ({type: ADD_POST, inputValue: text});
-export const inputMessageActionCreator = (text) => ({type: INPUT_MESSAGE, inputValue: text});
+export const inputPostActionCreator = (text) => ({type: INPUT_MESSAGE, inputValue: text});
 
 export let store = {
   _data: {
@@ -76,10 +76,10 @@ export let store = {
       text: textMessage
     };
     this._data.posts.push(newPost);
-    this.inputMessage('')
+    this.inputPost('')
     this._callSubscriber(this);
   },
-  inputMessage(inputText) {
+  inputPost(inputText) {
     this._data.currentPost.text = inputText;
   },
   subscribe(observer) {
@@ -89,7 +89,7 @@ export let store = {
     if(action.type === 'ADD_POST') {
       this.addPost(action.inputValue)
     } else if (action.type === 'INPUT_MESSAGE') {
-      this.inputMessage(action.inputValue)
+      this.inputPost(action.inputValue)
     }
   }
 }
