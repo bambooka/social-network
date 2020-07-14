@@ -16,6 +16,8 @@ function App(props) {
           <Switch>
             <Route path='/dialogs'>
               <Dialogs
+                dispatch={props.dispatch}
+                currentMessage={props.store._data.currentMessage}
                 messages={props.store._data.messages}
                 dialogs={props.store._data.dialogs}/>
             </Route>

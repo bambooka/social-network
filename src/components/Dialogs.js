@@ -19,7 +19,7 @@ const Dialogs = (props) => {
             return <Message key={index} message={message.message}/>
           })}
         </div>
-        <MessageForm />
+        <MessageForm dispatch={props.dispatch} currentMessage={props.currentMessage}/>
       </div>
     </div>
   )

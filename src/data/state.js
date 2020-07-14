@@ -1,11 +1,13 @@
 import React from 'react';
 import {
   ADD_POST,
+  INPUT_MESSAGE,
   INPUT_POST
 } from "../utils/constants";
 
 export const addPostActionCreator = (text) => ({type: ADD_POST, inputValue: text});
 export const inputPostActionCreator = (text) => ({type: INPUT_POST, inputValue: text});
+export const inputMessageActionCreator = (text) => ({type: INPUT_MESSAGE, inputValue: text})
 
 export let store = {
   _data: {
@@ -58,6 +60,9 @@ export let store = {
     ],
     currentPost: {
       text: ''
+    },
+    currentMessage: {
+      text: ''
     }
   },
   _callSubscriber() {
@@ -82,6 +87,9 @@ export let store = {
   inputPost(inputText) {
     this._data.currentPost.text = inputText;
   },
+  inputMessage(inputText){
+    this._data.currentMessage.text = inputText;
+  },
   subscribe(observer) {
     this._callSubscriber = observer;
   },
@@ -90,6 +98,8 @@ export let store = {
       this.addPost(action.inputValue)
     } else if (action.type === 'INPUT_POST') {
       this.inputPost(action.inputValue)
+    } else if (action.type === 'INPUT_MESSAGE') {
+      this.inputMessage(action.inputValue)
     }
   }
 }
