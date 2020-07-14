@@ -1,11 +1,11 @@
 import React from 'react';
 import {
   ADD_POST,
-  INPUT_MESSAGE
+  INPUT_POST
 } from "../utils/constants";
 
 export const addPostActionCreator = (text) => ({type: ADD_POST, inputValue: text});
-export const inputPostActionCreator = (text) => ({type: INPUT_MESSAGE, inputValue: text});
+export const inputPostActionCreator = (text) => ({type: INPUT_POST, inputValue: text});
 
 export let store = {
   _data: {
@@ -88,7 +88,7 @@ export let store = {
   dispatch (action) {
     if(action.type === 'ADD_POST') {
       this.addPost(action.inputValue)
-    } else if (action.type === 'INPUT_MESSAGE') {
+    } else if (action.type === 'INPUT_POST') {
       this.inputPost(action.inputValue)
     }
   }
