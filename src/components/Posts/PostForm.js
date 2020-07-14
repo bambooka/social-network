@@ -6,13 +6,13 @@ const PostForm = (props) => {
 
   let addPost = () => {
     let inputValue = refer.current.value;
-    props.addPost(inputValue);
+    props.dispatch({type: 'ADD_POST', inputValue: inputValue})
     refer.current.value = '';
   }
 
   let inputMessage = () => {
     let inputValue = refer.current.value;
-    props.inputMessage(inputValue)
+    props.dispatch({type: 'INPUT_MESSAGE', inputValue: inputValue})
   }
 
   return (

@@ -53,6 +53,9 @@ export let store = {
       text: ''
     }
   },
+  _callSubscriber() {
+    console.log('hi')
+  },
   getData() {
     return this
   },
@@ -75,8 +78,12 @@ export let store = {
   subscribe(observer) {
     this._callSubscriber = observer;
   },
-  _callSubscriber() {
-    console.log('hi')
+  dispatch (action) {
+    if(action.type === 'ADD_POST') {
+      this.addPost(action.inputValue)
+    } else if (action.type === 'INPUT_MESSAGE') {
+      this.inputMessage(action.inputValue)
+    }
   }
 }
 

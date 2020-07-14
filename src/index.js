@@ -9,8 +9,8 @@ export let renderEntireTree = (store) => {
     <React.StrictMode>
       <App
         store={store}
-        addPost={store.addPost.bind(store)}
-        inputMessage={store.inputMessage.bind(store)}
+        // метод dispatch вызывается в жестко определенном контексте - объект store
+        dispatch={store.dispatch.bind(store)}
       />
     </React.StrictMode>,
     document.getElementById('root')
