@@ -1,7 +1,8 @@
 import React from 'react';
-
-const ADD_POST = 'ADD_POST';
-const INPUT_MESSAGE = 'INPUT_MESSAGE';
+import {
+  ADD_POST,
+  INPUT_MESSAGE
+} from "../utils/constants";
 
 export const addPostActionCreator = (text) => ({type: ADD_POST, inputValue: text});
 export const inputMessageActionCreator = (text) => ({type: INPUT_MESSAGE, inputValue: text});
