@@ -3,17 +3,15 @@ import {inputMessageActionCreator} from "../../data/state";
 
 let MessageForm = (props) => {
 
-  let inputPostRef = React.createRef('inputPostRef');
-
-  let inputMessage = () => {
-    let inputValue = inputPostRef.current.value;
+  let inputMessage = (e) => {
+    let inputValue = e.target.value;
     let action = inputMessageActionCreator(inputValue);
     props.dispatch(action);
   }
 
   return (
     <div>
-      <textarea onChange={inputMessage} ref={inputPostRef}>
+      <textarea onChange={inputMessage}>
         {props.currentMessage.text}
       </textarea> <br/>
       <button>send</button>
