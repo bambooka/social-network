@@ -1,5 +1,5 @@
 import React from 'react';
-import {inputMessageActionCreator} from "../../data/state";
+import {addMessageActionCreator, inputMessageActionCreator} from "../../data/state";
 
 let MessageForm = (props) => {
 
@@ -9,12 +9,17 @@ let MessageForm = (props) => {
     props.dispatch(action);
   }
 
+  let sendNewMessage = (e) => {
+    let inputValue = e.target.value;
+    let action = addMessageActionCreator(inputValue);
+    console.log(action)
+    props.dispatch(action);
+  }
+
   return (
     <div>
-      <textarea onChange={inputMessage}>
-        {props.currentMessage.text}
-      </textarea> <br/>
-      <button>send</button>
+      <textarea onChange={inputMessage} defaultValue={props.currentMessage.text} />
+      <button onClick={sendNewMessage}>send</button>
     </div>
   )
 }
